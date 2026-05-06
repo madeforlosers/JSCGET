@@ -1,13 +1,18 @@
+import { Coordinates } from "../Main/Coordinates.js";
+
 export class InputHandler {
-    #mouseXY = [];
+    #mouseXY = new Coordinates(0, 0);
     #mousedown = false;
+    
     constructor() {
-        this.#mouseXY = [0, 0];
+        this.#mouseXY = new Coordinates(0, 0);
         this.#mousedown = false;
     }
     mouseMove(e) {
-        this.#mouseXY = [e.pageX, e.pageY];
+        this.#mouseXY.setX(e.pageX);
+        this.#mouseXY.setY(e.pageY);
     }
+
     mouseDown(e) {
         this.#mousedown = true;
     }
@@ -15,7 +20,7 @@ export class InputHandler {
         this.#mousedown = false;
     }
     getCoords() {
-        return this.#mouseXY;
+        return [this.#mouseXY.getX(), this.#mouseXY.getY()];
     }
     isClicked() {
         return this.#mousedown;

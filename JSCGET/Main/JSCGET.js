@@ -3,7 +3,7 @@ import { SpriteHandler } from "../Sprites/SpriteHandler.js";
 import { Sprite } from "../Sprites/Sprite.js";
 import { InputHandler } from "../Input/InputHandler.js";
 
-/*  JSCGET alpha 0.2
+/*  JSCGET alpha 0.3
 *     ^-(JavaScript Canvas Game Enging Testing)
 *
 *   made by thesaturnangel 2026
