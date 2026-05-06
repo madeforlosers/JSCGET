@@ -1,6 +1,5 @@
 import { JSCGETCanvas } from "./JSCGETCanvas.js";
 import { SpriteHandler } from "../Sprites/SpriteHandler.js";
-import { Sprite } from "../Sprites/Sprite.js";
 import { InputHandler } from "../Input/InputHandler.js";
 
 /*  JSCGET alpha 0.3
