@@ -6,12 +6,12 @@ export class Sprite {
 
     constructor(x, y, w, h, mass = 1) {
         this.mass = mass;
+        this.color = "black";
         this.id = SpriteIDCounter.assign();
         this.bounds = new Coordinates(w, h);
         this.pos = new Coordinates(x, y);
         this.velocity = new Coordinates(0, 0);
     }
-
     isPastWall() {
         if (this.pos.getY() < 1) return 1; // top
         if (this.pos.getX() < 1) return 4; // left
@@ -100,6 +100,7 @@ export class Sprite {
     }
 
     draw() {
+        this.ref.context.fillStyle = this.color;
         this.ref.context.fillRect(this.pos.getX(), this.pos.getY(), this.bounds.getX(), this.bounds.getY());
     }
 }

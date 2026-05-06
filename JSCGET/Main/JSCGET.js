@@ -1,8 +1,9 @@
 import { JSCGETCanvas } from "./JSCGETCanvas.js";
 import { SpriteHandler } from "../Sprites/SpriteHandler.js";
 import { Sprite } from "../Sprites/Sprite.js";
+import { InputHandler } from "../Input/InputHandler.js";
 
-/*  JSCGET alpha 0.1
+/*  JSCGET alpha 0.2
 *     ^-(JavaScript Canvas Game Enging Testing)
 *
 *   made by thesaturnangel 2026
@@ -13,8 +14,9 @@ export class JSCGET {
 
     #canvas = null;
     #sprites = null;
-    
+    inputLog = null;
     constructor(w, h) {
+        this.inputLog = new InputHandler();
         this.#canvas = new JSCGETCanvas(w, h);
         this.#sprites = new SpriteHandler();
     }
@@ -25,6 +27,16 @@ export class JSCGET {
 
     draw() {
         this.#sprites.draw(this.#canvas);
+    }
+
+    mouseMove(e) {
+        this.inputLog.mouseMove(e);
+    }
+    mouseDown(e) {
+        this.inputLog.mouseDown(e);
+    }
+    mouseUp(e) {
+        this.inputLog.mouseUp(e);
     }
 
     wipeScreen() {
